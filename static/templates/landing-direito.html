@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Véritas & Iustitia | Advocacia de Excelência</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0d1b2a;
+            --primary-light: #1b3a4b;
+            --accent-gold: #c8a97e;
+            --accent-gold-light: #e6d4b8;
+            --light-color: #f8f5f2;
+            --light-gray: #e9e9e9;
+            --medium-gray: #a0a0a0;
+            --dark-gray: #4a4a4a;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.08);
+            --border-radius: 4px;
+            --section-spacing: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        h3 {
+            font-size: 2.2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--medium-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: transparent;
+            color: var(--primary-dark);
+            border: 1px solid var(--accent-gold);
+            border-radius: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            color: white;
+            border-color: var(--accent-gold);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
+        .btn-primary:before {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            margin: 0 5px;
+        }
+
+        .logo-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--medium-gray);
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 50px;
+        }
+
+        nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 5.5rem;
+            margin-bottom: 30px;
+            line-height: 1.05;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .hero-divider {
+            width: 120px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            margin: 40px 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--accent-gold-light);
+            z-index: -1;
+        }
+
+        .years-experience {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .years-experience .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1;
+        }
+
+        .years-experience .text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            background-color: white;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+            border-top-color: var(--accent-gold);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+        }
+
+        .service-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: rgba(200, 169, 126, 0.1);
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background-color: white;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .team-member-img {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-member-info {
+            padding: 30px;
+        }
+
+        .team-member-title {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 80px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--light-gray);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--dark-gray);
+            transition: var(--transition);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            font-size: 1rem;
+            color: var(--medium-gray);
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .form-group input:focus ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group input:valid ~ label,
+        .form-group textarea:valid ~ label {
+            top: -15px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .testimonials h2 {
+            color: white;
+        }
+
+        .testimonials h2:after {
+            background-color: var(--accent-gold);
+        }
+
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 100px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--accent-gold);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 4rem;
+            }
+            
+            h2 {
+                font-size: 3rem;
+            }
+            
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 50px;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            section {
+                padding: 100px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: var(--shadow-medium);
+                padding: 30px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Véritas<span>&</span>Iustitia<span class="logo-subtitle">ADVOGADOS</span></a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Especialidades</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Excelência Jurídica com Sofisticação e Precisão</h1>
+                <div class="hero-divider"></div>
+                <p class="lead">Oferecemos representação legal de alto nível, combinando expertise tradicional com abordagens inovadoras para alcançar os melhores resultados para nossos clientes.</p>
+                <a href="#contact" class="btn btn-primary">Agendar Consultoria</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">Role para explorar <i class="fas fa-chevron-down" style="margin-left: 10px;"></i></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Excelência em Advocacia</h2>
+                    <p>Fundado em 1998, o escritório Véritas & Iustitia consolidou-se como uma referência em advocacia de elite, atendendo clientes exigentes que buscam representação jurídica da mais alta qualidade.</p>
+                    <p>Nossa filosofia baseia-se em três pilares: excelência técnica, atenção meticulosa aos detalhes e um compromisso inabalável com os interesses de nossos clientes.</p>
+                    <p>Com uma equipe de advogados especializados em diversas áreas do direito, oferecemos soluções jurídicas personalizadas e estratégicas para indivíduos, famílias e corporações.</p>
+                    
+                    <div class="years-experience">
+                        <span class="number">25+</span>
+                        <span class="text">Anos de Excelência</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior sofisticado do escritório de advocacia">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Especialidades Jurídicas</h2>
+                <p class="lead">Áreas de atuação onde oferecemos expertise diferenciada e resultados consistentes.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Direito Corporativo</h3>
+                    <p>Assessoria completa para empresas, desde constituição até operações complexas de fusões e aquisições, com foco em estratégias jurídicas empresariais.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Patrimônio Familiar</h3>
+                    <p>Proteção e gestão de patrimônios familiares, planejamento sucessório, estruturas societárias e preservação de legados entre gerações.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Direito Imobiliário de Luxo</h3>
+                    <p>Atuação especializada no mercado imobiliário de alto padrão, incluindo transações complexas, due diligence e estruturação de investimentos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <h3>Litígios Complexos</h3>
+                    <p>Representação em disputas judiciais de alta complexidade e valor, com estratégias personalizadas para resolução eficiente de conflitos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Direito Internacional</h3>
+                    <p>Assessoria em transações e disputas com elementos internacionais, incluindo comércio exterior, investimentos estrangeiros e arbitragem internacional.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Compliance e Governança</h3>
+                    <p>Implementação de programas de conformidade, ética corporativa e melhores práticas de governança para organizações públicas e privadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Equipe</h2>
+                <p class="lead">Advogados especializados com formação nas mais prestigiadas instituições do país e exterior.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Dr. Eduardo Véritas">
+                    </div>
+                    <div class="team-member-info">
+                        <div class="team-member-title">Sócio Fundador</div>
+                        <h3>Dr. Eduardo Véritas</h3>
+                        <p>Doutor em Direito Empresarial pela Universidade de Harvard. Mais de 30 anos de experiência em direito corporativo internacional.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2061&q=80" alt="Dra. Isabella Iustitia">
+                    </div>
+                    <div class="team-member-info">
+                        <div class="team-member-title">Sócia</div>
+                        <h3>Dra. Isabella Iustitia</h3>
+                        <p>Mestre em Direito Internacional pela Universidade de Cambridge. Especialista em arbitragem internacional e direito comercial.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Dr. Rafael Mendes">
+                    </div>
+                    <div class="team-member-info">
+                        <div class="team-member-title">Sócio</div>
+                        <h3>Dr. Rafael Mendes</h3>
+                        <p>Especialista em direito imobiliário e planejamento patrimonial. Professor convidado da FGV-SP.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80" alt="Dra. Carolina Silva">
+                    </div>
+                    <div class="team-member-info">
+                        <div class="team-member-title">Sócia</div>
+                        <h3>Dra. Carolina Silva</h3>
+                        <p>Doutora em Direito Tributário pela USP. Responsável pela área de compliance e consultoria tributária estratégica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Depoimentos</h2>
+                <p class="lead" style="color: rgba(255, 255, 255, 0.7);">O que nossos clientes dizem sobre nossos serviços.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-content">
+                    "O escritório Véritas & Iustitia demonstrou expertise excepcional em um caso corporativo complexo de nossa empresa. A abordagem estratégica e a atenção aos detalhes resultaram em um desfecho extremamente favorável."
+                </div>
+                <div class="testimonial-author">Roberto Almeida</div>
+                <div class="testimonial-role">CEO, Grupo Almeida</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p class="lead">Estamos à disposição para oferecer soluções jurídicas personalizadas para suas necessidades.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Nossos Escritórios</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>São Paulo</h4>
+                            <p>Avenida Paulista, 2372 - Conjunto 2101<br>Jardim Paulista, São Paulo - SP</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Rio de Janeiro</h4>
+                            <p>Avenida Atlântica, 3500 - Conjunto 901<br>Copacabana, Rio de Janeiro - RJ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>+55 (11) 3333-4444</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p>contato@veritas-iustitia.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Agende uma Consultoria</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Nome Completo</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">E-mail</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" required>
+                            <label for="phone">Telefone</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="" disabled selected></option>
+                                <option value="corporate">Direito Corporativo</option>
+                                <option value="family">Patrimônio Familiar</option>
+                                <option value="realestate">Direito Imobiliário</option>
+                                <option value="litigation">Litígios Complexos</option>
+                                <option value="international">Direito Internacional</option>
+                                <option value="compliance">Compliance</option>
+                            </select>
+                            <label for="service">Área de Interesse</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Mensagem</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Véritas & Iustitia</h3>
+                    <p>Escritório de advocacia especializado em oferecer soluções jurídicas sofisticadas e personalizadas para clientes exigentes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Áreas de Atuação</h3>
+                    <ul>
+                        <li><a href="#services">Direito Corporativo</a></li>
+                        <li><a href="#services">Patrimônio Familiar</a></li>
+                        <li><a href="#services">Direito Imobiliário</a></li>
+                        <li><a href="#services">Litígios Complexos</a></li>
+                        <li><a href="#services">Direito Internacional</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#team">Nossa Equipe</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Av. Paulista, 2372 - São Paulo</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +55 (11) 3333-4444</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> contato@veritas-iustitia.com.br</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Véritas & Iustitia Advogados. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('#main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Mensagem Enviada!';
+            submitBtn.style.backgroundColor = '#2ecc71';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.backgroundColor = '';
+                contactForm.reset();
+            }, 3000);
+        });
+        
+        // Form label animation on load for pre-filled values
+        document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(input => {
+            if (input.value) {
+                input.nextElementSibling.style.top = '-15px';
+                input.nextElementSibling.style.fontSize = '0.85rem';
+                input.nextElementSibling.style.color = 'var(--accent-gold)';
+            }
+            
+            input.addEventListener('blur', function() {
+                if (this.value) {
+                    this.nextElementSibling.style.top = '-15px';
+                    this.nextElementSibling.style.fontSize = '0.85rem';
+                    this.nextElementSibling.style.color = 'var(--accent-gold)';
+                } else {
+                    this.nextElementSibling.style.top = '15px';
+                    this.nextElementSibling.style.fontSize = '1rem';
+                    this.nextElementSibling.style.color = 'var(--medium-gray)';
+                }
+            });
+        });
+        
+        // Initialize header state
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
+        
+        // Add subtle fade-in animation for elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .team-member, .contact-item, .about-text, .about-image').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorriso Elegance - Cuidados Bucais de Excelência</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e variáveis */
+        :root {
+            --primary: #2c8c99;
+            --primary-light: #e0f7fa;
+            --primary-dark: #1a5f6b;
+            --secondary: #f8f9fa;
+            --accent: #ffb74d;
+            --accent-light: #fff3e0;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+            --gray-light: #f5f7f8;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --border: 1px solid rgba(44, 140, 153, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(44, 140, 153, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 140, 153, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #ff9800);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(255, 183, 77, 0.3);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 183, 77, 0.4);
+        }
+
+        /* Header Elegante */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary-dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section Elegante */
+        .hero {
+            background: linear-gradient(135deg, rgba(224, 247, 250, 0.9) 0%, rgba(255, 255, 255, 1) 100%);
+            padding: 10rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+            border-radius: 0 0 0 100px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Serviços Elegantes */
+        .services {
+            background-color: var(--secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Diferenciais */
+        .diferenciais {
+            background-color: var(--white);
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .diferencial-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .diferencial-item:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-5px);
+        }
+
+        .diferencial-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            background-color: rgba(44, 140, 153, 0.1);
+            border-radius: 50%;
+        }
+
+        /* Sobre Elegante */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background-color: var(--gray-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 4rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .about-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-features i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(245, 247, 248, 0.9) 100%);
+        }
+
+        /* Equipe Elegante */
+        .team {
+            background-color: var(--secondary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .team-member-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-member-info {
+            padding: 2rem;
+        }
+
+        .team-member-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member-info .specialty {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Contato Elegante */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 4rem;
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 4rem;
+        }
+
+        .contact-info h2 {
+            color: var(--white);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+            padding: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: var(--border);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 140, 153, 0.1);
+        }
+
+        /* Footer Elegante */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero::before {
+                width: 50%;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                min-height: 400px;
+                width: 100%;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero::before {
+                display: none;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-btn.active i::before {
+                content: '\f00d';
+            }
+            
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+            
+            .overlay.active {
+                display: block;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Elegante -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-tooth logo-icon"></i>
+                    <div class="logo-text">Sorriso<span>Elegance</span></div>
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#contact" class="btn btn-outline">Agendar Consulta</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </header>
+
+    <!-- Hero Section Elegante -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Cuidados Bucais com Elegância e Precisão</h1>
+                    <p>Na Sorriso Elegance, unimos tecnologia de ponta, design contemporâneo e atendimento personalizado para criar sorrisos saudáveis e harmoniosos.</p>
+                    
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i> Agendar Consulta
+                        </a>
+                        <a href="#services" class="btn btn-outline">
+                            <i class="fas fa-teeth-open"></i> Nossos Serviços
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5.000+</span>
+                            <span class="stat-label">Sorrisos Transformados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfação dos Pacientes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Elegantes -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Serviços Exclusivos</h2>
+                <p>Oferecemos tratamentos odontológicos completos com tecnologia avançada e abordagem personalizada</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Clareamento Dental</h3>
+                    <p>Clareamento seguro e eficaz para um sorriso mais branco e radiante, utilizando tecnologia LED de última geração.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3>Ortodontia Invisível</h3>
+                    <p>Alinhamento dental discreto com alinhadores transparentes, sem comprometer sua estética durante o tratamento.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Lentes de Contato Dental</h3>
+                    <p>Facetas ultrafinas de porcelana para corrigir forma, cor e tamanho dos dentes com resultados naturais.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-teeth-open"></i>
+                    </div>
+                    <h3>Implantes Dentários</h3>
+                    <p>Reposição de dentes perdidos com implantes de titânio de alta qualidade e procedimentos minimamente invasivos.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Harmonização Orofacial</h3>
+                    <p>Procedimentos estéticos para equilibrar sorriso e rosto, proporcionando harmonia facial e dental.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Odontopediatria</h3>
+                    <p>Cuidados especializados para crianças em ambiente lúdico e acolhedor, criando hábitos saudáveis desde cedo.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="diferenciais" id="diferenciais">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Diferenciais</h2>
+                <p>O que nos torna referência em cuidados bucais de excelência</p>
+            </div>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certificação Internacional</h3>
+                    <p>Equipe com certificações internacionais e constante atualização nas últimas técnicas odontológicas.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Tecnologia de Ponta</h3>
+                    <p>Scanner intraoral, radiografia digital e planejamento 3D para tratamentos mais precisos e previsíveis.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>Escuta ativa e acolhimento em todas as etapas do tratamento, com foco no conforto e bem-estar do paciente.</p>
+                </div>
+                
+                <div class="diferencial-item">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Agilidade no Atendimento</h3>
+                    <p>Consultas com horário marcado, sem espera, e disponibilidade para emergências odontológicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Elegante -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Excelência em Cuidados Bucais</h2>
+                    <p>A Sorriso Elegance foi fundada com a missão de redefinir a experiência odontológica, combinando expertise clínica, tecnologia avançada e um ambiente sofisticado que inspira confiança e bem-estar.</p>
+                    
+                    <p>Nossa filosofia é baseada na atenção aos detalhes, desde o design de nosso espaço até a personalização de cada plano de tratamento, garantindo resultados que superam as expectativas.</p>
+                    
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Equipe multidisciplinar especializada</li>
+                        <li><i class="fas fa-check-circle"></i> Materiais de alta qualidade e durabilidade</li>
+                        <li><i class="fas fa-check-circle"></i> Ambiente esterilizado e seguro</li>
+                        <li><i class="fas fa-check-circle"></i> Tecnologia digital em todos os processos</li>
+                        <li><i class="fas fa-check-circle"></i> Atendimento personalizado e exclusivo</li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1.5rem;">
+                        <i class="fas fa-phone-alt"></i> Conheça Nossa Clínica
+                    </a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe Elegante -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Equipe Especializada</h2>
+                <p>Profissionais renomados dedicados à excelência em cuidados bucais</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dra. Isabella Monteiro">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dra. Isabella Monteiro</h3>
+                        <span class="specialty">Especialista em Estética Dental</span>
+                        <p>15 anos de experiência em harmonização facial e reabilitação oral. Membro da Academia Americana de Odontologia Estética.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1591608971362-f08b2a75731a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rafael Costa">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. Rafael Costa</h3>
+                        <span class="specialty">Especialista em Implantodontia</span>
+                        <p>Pós-graduado em Implantodontia pela USP. Expertise em reabilitação oral complexa e próteses sobre implantes.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dra. Sofia Martins">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dra. Sofia Martins</h3>
+                        <span class="specialty">Ortodontista e Ortopedista Facial</span>
+                        <p>Especialista em ortodontia invisível e tratamentos ortopédicos para crianças e adolescentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Elegante -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Estamos prontos para cuidar do seu sorriso com excelência e atenção personalizada.</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Av. Paulista, 1234 - 10º andar<br>São Paulo - SP, 01310-100</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(11) 3456-7890<br>(11) 98765-4321 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Horário de Funcionamento</h3>
+                            <p>Segunda a Sexta: 8h às 20h<br>Sábado: 8h às 14h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Agende sua Consulta</h2>
+                    <p>Preencha o formulário abaixo e entraremos em contato para confirmar seu horário.</p>
+                    
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" class="form-control" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="(11) 99999-9999" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse</label>
+                            <select id="service" class="form-control" required>
+                                <option value="" disabled selected>Selecione um serviço</option>
+                                <option value="clareamento">Clareamento Dental</option>
+                                <option value="ortodontia">Ortodontia Invisível</option>
+                                <option value="lentes">Lentes de Contato Dental</option>
+                                <option value="implantes">Implantes Dentários</option>
+                                <option value="harmonizacao">Harmonização Orofacial</option>
+                                <option value="odontopediatria">Odontopediatria</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem (Opcional)</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Descreva brevemente sua necessidade ou dúvida..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Elegante -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sorriso Elegance</h3>
+                    <p>Clínica odontológica de excelência, especializada em cuidados bucais com tecnologia avançada, design contemporâneo e atendimento personalizado.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="#diferenciais"><i class="fas fa-chevron-right"></i> Diferenciais</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                        <li><a href="#team"><i class="fas fa-chevron-right"></i> Equipe</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Clareamento Dental</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ortodontia Invisível</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Lentes de Contato</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Implantes Dentários</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Harmonização Orofacial</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1234 - São Paulo</a></li>
+                        <li><a href="tel:+551134567890"><i class="fas fa-phone-alt"></i> (11) 3456-7890</a></li>
+                        <li><a href="mailto:contato@sorrisoelegance.com"><i class="fas fa-envelope"></i> contato@sorrisoelegance.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Seg-Sex: 8h às 20h | Sáb: 8h às 14h</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Sorriso Elegance. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart" style="color: #ffb74d;"></i> para sorrisos mais saudáveis</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('overlay');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Formulário de agendamento
+        const appointmentForm = document.getElementById('appointmentForm');
+        appointmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletar dados do formulário
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            
+            // Animação de envio
+            const submitBtn = appointmentForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            // Simular envio
+            setTimeout(() => {
+                // Aqui normalmente enviaríamos os dados para um servidor
+                // Por enquanto, vamos apenas mostrar um alerta estilizado
+                const alertDiv = document.createElement('div');
+                alertDiv.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                    color: white;
+                    padding: 2rem;
+                    border-radius: var(--radius);
+                    box-shadow: var(--shadow-hover);
+                    z-index: 9999;
+                    text-align: center;
+                    max-width: 400px;
+                    width: 90%;
+                `;
+                alertDiv.innerHTML = `
+                    <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h3 style="color: white; margin-bottom: 1rem;">Solicitação Enviada!</h3>
+                    <p>Obrigado, ${name}! Sua solicitação para ${service} foi recebida. Entraremos em contato pelo telefone ${phone} em até 24 horas.</p>
+                    <button id="closeAlert" style="margin-top: 1.5rem; padding: 0.8rem 2rem; background-color: var(--accent); color: white; border: none; border-radius: 50px; cursor: pointer;">OK</button>
+                `;
+                document.body.appendChild(alertDiv);
+                
+                // Botão para fechar o alerta
+                document.getElementById('closeAlert').addEventListener('click', () => {
+                    document.body.removeChild(alertDiv);
+                });
+                
+                // Fechar alerta ao clicar fora
+                alertDiv.addEventListener('click', (e) => {
+                    if (e.target === alertDiv) {
+                        document.body.removeChild(alertDiv);
+                    }
+                });
+                
+                // Restaurar botão
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Limpar formulário
+                appointmentForm.reset();
+            }, 1500);
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Inicializar header scrolled se já estiver rolado
+        if (window.scrollY > 100) {
+            document.getElementById('header').classList.add('header-scrolled');
+        }
+    </script>
+</body>
+</html>
