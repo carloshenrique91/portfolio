@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Carlos Henrique Venâncio Filho" />
+        <meta name="description" content="Portfólio de Carlos Henrique Venâncio Filho, Desenvolvedor Web Full Stack. Projetos, habilidades, formação acadêmica e contato." />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:title" content="Portfólio | Carlos Henrique Venâncio Filho" />
+        <meta property="og:site_name" content="Portfólio | Carlos Henrique Venâncio Filho" />
+        <meta property="og:description" content="Portfólio de Carlos Henrique Venâncio Filho, Desenvolvedor Web Full Stack. Projetos, habilidades, formação acadêmica e contato." />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Portfólio | Carlos Henrique Venâncio Filho" />
+        <meta name="twitter:description" content="Portfólio de Carlos Henrique Venâncio Filho, Desenvolvedor Web Full Stack. Projetos, habilidades, formação acadêmica e contato." />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Carlos Henrique Venâncio Filho",
+                "jobTitle": "Desenvolvedor Web Full Stack",
+                "sameAs": [
+                    "https://www.instagram.com/ch.venancio/",
+                    "https://www.linkedin.com/in/carlos-henrique-ven%C3%A2ncio-3b279b150/"
+                ]
+            }
+        </script>
+
+        <title>Portfólio | Carlos Henrique Venâncio Filho</title>
+
+        <link rel="icon" type="image/svg+xml" href="static/img/others/dev.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
+        <link rel="stylesheet" href="static/css/style.css" />
+        <link rel="stylesheet" href="static/css/animate.min.css" />
+        <link rel="stylesheet" href="static/css/google_material.css" />
+
+        <script src="static/js/jquery-4.0.0.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+        <script src="static/js/main.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#home">Pular para o conteúdo</a>
+        <main id="main_container">
+            <nav id="main_menu" aria-label="Menu principal">
+                <h3 class="animate__animated animate__fadeInUp posicao_scroll"><img src="static/img//others/dev.svg" alt="Imagem svg de um boneco mexendo no notebook"> Carlos Venâncio</h3>
+                <button class="btn_menu_mobile" type="button" aria-label="Abrir menu" aria-controls="menu_list" aria-expanded="false">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <ul id="menu_list">
+                    <li class="animate__animated animate__fadeInUp">
+                        <a href="#home" class="active" aria-current="page">
+                            <span class="material-symbols-outlined">home</span>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a href="#portfolio">
+                            <span class="material-symbols-outlined">apps</span>
+                            <span>Portfólio</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a href="#skills">
+                            <span class="material-symbols-outlined">psychology</span>
+                            <span>Habilidades</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a href="#academic">
+                            <span class="material-symbols-outlined">school</span>
+                            <span>Acadêmico</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a href="#contact">
+                            <span class="material-symbols-outlined">perm_phone_msg</span>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="scroll_watcher"></div>
+            </nav>
+            <header id="home" class="block" aria-labelledby="home-title" tabindex="-1">
+                <section>
+                    <p>Olá! Meu nome é</p>
+                    <h1 id="home-title">Carlos Henrique Venâncio</h1>
+                    <p><strong>Desenvolvedor Web Full Stack</strong></p>
+                    <p>Estou sempre evoluindo para criar soluções práticas e eficientes. Desenvolvo aplicações web completas, atuando na interface e na lógica do sistema, com foco em organização, desempenho, boas práticas e design.</p>
+                </section>
+
+                <div class="scroll-indicator">Role para explorar <span class="material-symbols-outlined">arrow_downward_alt</span></div>
+            </header>
+
+            <section id="portfolio" class="block" aria-labelledby="portfolio-title">
+                <h2 id="portfolio-title" class="title">Portfólio</h2>
+                <p class="description">Projetos em que atuei profissionalmente, com foco em soluções web, soluções operação interna, suporte e processos.</p>
+                <ul class="list">
+                    <li data-gallery="static/img/mk1.png|static/img/mk2.png" data-links="Campanha Hipopó::https://help.ccmindustria.com.br/marketing/hipopo.php|Campanha Pequerrucho::https://help.ccmindustria.com.br/marketing/pequerrucho.php">
+                        <img src="static/img/others/project.svg" alt="Imagem do projeto de campanhas de marketing da CCM" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">work</span> CCM Indústria e Comércio de Produtos Descartáveis SA - Campanhas de Marketing</h3>
+                        <p>Desenvolvimento de landing pages para campanhas de marketing, com foco em conversão, comunicacao clara dos produtos e servicos.</p>
+                    </li>
+                    <li data-gallery="static/img/help1.png|static/img/help2.png|static/img/help3.png|static/img/help4.png" data-links="Contato no WhatsApp::https://api.whatsapp.com/send?phone=5534999836009&amp;text=Ol%C3%A1%2C%20tenho%20interesse%20na%20plataforma%20CCM%20Help.">
+                        <img src="static/img/others/project.svg" alt="Imagem da plataforma CCM Help" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">work</span> CCM Indústria e Comércio de Produtos Descartáveis SA - Plataforma CCM Help</h3>
+                        <p>Plataforma web interna para gestão de processos, reunindo modulos como help desk, YMS, conferência de produtos de expedição, código de conduta, segurança do trabalho, emissão de etiquetas, agendamento de salas, marketing, controle de ativos entre diversos outros.</p>
+                    </li>                        
+                    <li data-gallery="static/img/r9.png" data-links="Acesse o site::https://segurosre9.com.br">
+                        <img src="static/img/others/project.svg" alt="Imagem do site institucional da Seguros R9" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">work</span> Seguros R9</h3>
+                        <p>Site institucional desenvolvido para apresentar servicos, facilitar contato comercial e apoiar a captacao de novos clientes.</p>
+                    </li>
+                    <li data-gallery="static/img/templ2.png|static/img/templ1.png">
+                        <img src="static/img/others/project.svg" alt="Imagem da colecao de templates web" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">work</span> Templates</h3>
+                        <p>Templates web responsivos desenvolvidos para patricar e fixar conhecimentos adquiridos.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="skills" class="block" aria-labelledby="skills-title">
+                <h2 id="skills-title" class="title">Habilidades</h2>
+                <p class="description">Tecnologias com as quais tenho conhecimento, prática e estudo.</p>
+                <ul class="list">
+                    <li>
+                        <img src="static/img/skills/html5.svg" alt="HTML5" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> HTML5</h3>
+                        <p>Tenho conhecimento em HTML5 e em estruturação semântica de páginas.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/css3.svg" alt="CSS3" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> CSS3</h3>
+                        <p>Tenho conhecimento em CSS3 para estilização, responsividade e animações.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/sass.svg" alt="SASS" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> SASS</h3>
+                        <p>Tenho conhecimento em SASS, incluindo variáveis, mixins e organização de estilos.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/js.svg" alt="JavaScript" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> JavaScript</h3>
+                        <p>Tenho conhecimento em JavaScript para lógica de front-end e manipulação de DOM.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/alpinejs.svg" alt="Alpine.js" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> Alpine.js</h3>
+                        <p>Estou estudando Alpine.js e praticando interatividade leve em interfaces.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/jquery.svg" alt="jQuery" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> jQuery</h3>
+                        <p>Tenho conhecimento em jQuery, especialmente em projetos legados.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/php.svg" alt="PHP" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> PHP</h3>
+                        <p>Tenho conhecimento em PHP para desenvolvimento back-end.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/sql.svg" alt="SQL" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> SQL</h3>
+                        <p>Tenho conhecimento em SQL para consultas e manipulação de dados relacionais.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/py.svg" alt="Python" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> Python</h3>
+                        <p>Tenho conhecimento em Python para scripts e automações.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/java.svg" alt="Java" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> Java</h3>
+                        <p>Tenho conhecimento básico em Java.</p>
+                    </li>
+                    <li>
+                        <img src="static/img/skills/flask.svg" alt="Flask" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">psychology</span> Flask</h3>
+                        <p>Tenho conhecimento básico em Flask.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="academic" class="block" aria-labelledby="academic-title">
+                <h2 id="academic-title" class="title">Acadêmico</h2>
+                <p class="description">Minha formação acadêmica e os cursos que contribuíram para o meu desenvolvimento profissional.</p>
+                <ul class="list">
+                    <li>
+                        <img src="static/img/academic/iftm.svg" alt="IFTM" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">workspace_premium</span> Análise e Desenvolvimento de Sistemas</h3>
+                        <p>Graduado em Análise e Desenvolvimento de Sistemas (ADS) pelo Instituto Federal do Triângulo Mineiro (<strong>IFTM</strong>).</p>
+                        <a class="external_links" href="https://iftm.edu.br/cursos/uraparquetecnologico/tecnologo/analise-e-desenvolvimento-de-sistemas/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">captive_portal</span></a>
+                    </li>                    
+                    <li>
+                        <img src="static/img/academic/uniube.svg" alt="Uniube" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">workspace_premium</span> Especialização em Desenvolvimento Web e Mobile</h3>
+                        <p>Pós-graduação concluída na <strong>Universidade de Uberaba (Uniube)</strong>, em Especialização em Desenvolvimento Web e Mobile.</p>
+                        <a class="external_links" href="https://uniube.br/curso/ead/pos-graduacao/especializacao-em-desenvolvimento-web-e-mobile?utm_term=&utm_campaign=%5BPMMAX%5D+Campanha+EAD+2024.4+-+300km&utm_source=adwords&utm_medium=ppc" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">captive_portal</span></a>
+                    </li>
+                    <li>
+                        <img src="static/img/academic/sololearn.svg" alt="Sololearn" loading="lazy" decoding="async">
+                        <h3><span class="material-symbols-outlined">workspace_premium</span> Sololearn</h3>
+                        <p>Realizei cursos de aprimoramento e fixação de conhecimentos na plataforma gratuita de aprendizado <strong>Sololearn</strong>, focada no ensino de programação.</p>
+                        <a class="external_links" href="https://www.sololearn.com/pt/profile/6118670" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">captive_portal</span></a>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact" class="block" aria-labelledby="contact-title">
+                <h2 id="contact-title" class="title">Contato</h2>
+                <p class="description">Preencha o formulário abaixo para entrar em contato comigo. Estou disponível para discutir novos projetos, colaborações ou quaisquer outras dúvidas.</p>
+                <form id="contact-form" class="form_contact" action="#" method="post" autocomplete="on" data-whatsapp="5534999836009">
+                    <span class="material-symbols-outlined form_icon" aria-hidden="true">perm_phone_msg</span>
+                    <div class="form_fields">
+                        <label class="field" for="clientName">
+                            <span>Nome</span>
+                            <input type="text" name="clientName" id="clientName" placeholder="Seu nome completo" required minlength="3" autocomplete="name">
+                        </label>
+                        <!--<label class="field" for="clientEmail">
+                            <span>E-mail</span>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder="voce@exemplo.com" required inputmode="email" autocomplete="email">
+                        </label>-->
+                        <label class="field" for="clientText">
+                            <span>Mensagem</span>
+                            <textarea name="clientText" id="clientText" placeholder="Escreva sua mensagem" required minlength="10" maxlength="2000" rows="6" spellcheck="true"></textarea>
+                        </label>
+
+                        <label class="sr-only" for="website">Website</label>
+                        <input class="sr-only" type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+
+                        <p id="contact-status" class="form_status" role="status" aria-live="polite"></p>
+
+                        <div class="btn_container_form">
+                            <button class="btn_send" type="submit">
+                                <span class="material-symbols-outlined" aria-hidden="true">send</span>
+                                <span>Enviar via WhatsApp</span>
+                            </button>
+                            <p class="form_hint">Ao enviar, o WhatsApp será aberto com sua mensagem preenchida.</p>
+                        </div>
+                        <noscript>
+                            <p class="form_hint">Ative o JavaScript para enviar pelo formulário. Você também pode me chamar no WhatsApp pelo link no rodapé.</p>
+                        </noscript>
+                    </div>
+                </form>
+            </section>
+
+            <footer id="footer">
+                <img class="graduation" src="/static/img/fomartura.png" alt="foto de formatura">
+                <ul class="social_media">
+                    <li class="animate__animated animate__fadeInUp">
+                        <a class="social_link--whatsapp" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=5534999836009">
+                            <img class="social_icon" color="#6DFFFF" src="static/img/social/whatsapp.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <span>WhatsApp</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a class="social_link--instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ch.venancio/">
+                            <img class="social_icon" src="static/img/social/instagram.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li class="animate__animated animate__fadeInUp">
+                        <a class="social_link--linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/carlos-henrique-ven%C3%A2ncio-3b279b150/">
+                            <img class="social_icon" src="static/img/social/linkedin.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright"><strong>&copy; <span id="year"></span></strong> <span>Carlos Henrique Venâncio Filho</span></p>
+            </footer>
+        </main> 
+    </body>
+</html>
