@@ -658,14 +658,13 @@ body {
 #footer .graduation {
   content: "";
   position: absolute;
-  opacity: 0.3;
+  opacity: 0.5;
   right: 0rem;
   bottom: 0;
   width: 100%;
   max-width: 900px;
   height: auto;
   z-index: -1;
-  background: url("../img/fomartura.png");
   background-repeat: no-repeat;
 }
 #footer .social_media {
